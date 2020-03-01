@@ -21,8 +21,10 @@
 */
 
 using System;
+using System.Threading.Tasks;
 using Avalonia.Controls;
 using Avalonia.Controls.Shapes;
+using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using Avalonia.Threading;
 using Microsoft.Extensions.DependencyInjection;
@@ -38,16 +40,21 @@ namespace WiiMoteSpotlight.App
 		public MainWindow()
 		{
 			InitializeComponent();
-			
+
 			// Initialize private fields
 			_wiiMote = App.Services.GetService<IWiiMote>();
 			_pointer = this.FindControl<Ellipse>("pointer");
-			
+
 			// Subscribe to WiiMote events
 			_wiiMote.KeyPress += WiiMoteOnKeyPress;
 			_wiiMote.KeyRelease += WiiMoteOnKeyRelease;
+			_wiiMote.PointerMoved += WiiMoteOnPointerMoved;
+			PointerMoved += OnPointerMoved;
+			
+			// Start application hidden
+			Task.Delay(100).ContinueWith(_ => Dispatcher.UIThread.InvokeAsync(Hide));
 		}
-		
+
 		private void InitializeComponent()
 		{
 			AvaloniaXamlLoader.Load(this);
@@ -71,6 +78,19 @@ namespace WiiMoteSpotlight.App
 					Dispatcher.UIThread.InvokeAsync(Hide);
 					break;
 			}
+		}
+		
+		private void WiiMoteOnPointerMoved(object? sender, (int x, int y) args)
+		{
+			Console.WriteLine(args);
+		}
+		
+		private void OnPointerMoved(object? sender, PointerEventArgs args)
+		{
+			var pos = args.GetPosition(this);
+
+			_pointer.SetValue(Canvas.LeftProperty, pos.X - _pointer.Width / 2);
+			_pointer.SetValue(Canvas.TopProperty, pos.Y - _pointer.Height / 2);
 		}
 
 		public override void Show()
