@@ -21,6 +21,8 @@
 */
 
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 using WiiMoteSpotlight.Lib.XWiiMote.Swig;
 
 namespace WiiMoteSpotlight.Lib.XWiiMote
@@ -45,6 +47,41 @@ namespace WiiMoteSpotlight.Lib.XWiiMote
 			                     xwii_iface_type.IFACE_MOTION_PLUS));
 
 			_device.set_mp_normalization(-266, 2500, -1160, 50);
+			
+			Task.Run(InputEventLoop);
+		}
+
+		private void InputEventLoop()
+		{
+			while (true)
+			{
+				if (!TryDispatchEvent(out var wiiEvent))
+					Thread.Sleep(1);
+				
+				xwii_event_types eventType = (xwii_event_types)wiiEvent.type;
+				
+				switch (eventType)
+				{
+					case xwii_event_types.EVENT_KEY:
+						break;
+				}
+			}
+		}
+
+		private bool TryDispatchEvent(out xwii_event_ wiiEvent)
+		{
+			wiiEvent = new xwii_event_();
+			
+			try
+			{
+				_device.dispatch(wiiEvent);
+			}
+			catch
+			{
+				return false;
+			}
+
+			return true;
 		}
 
 		public void Dispose()
