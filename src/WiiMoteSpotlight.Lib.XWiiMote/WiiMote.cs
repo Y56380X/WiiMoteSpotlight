@@ -30,12 +30,6 @@ using WiiMoteSpotlight.Lib.XWiiMote.Swig;
 
 namespace WiiMoteSpotlight.Lib.XWiiMote
 {
-	static class AsyncEventHandler
-	{
-		public static Task InvokeAsync<T>(this EventHandler<T> eventHandler, object sender, T data) =>
-			Task.Run(() => eventHandler?.Invoke(sender, data));
-	}
-	
 	public class WiiMote : IWiiMote
 	{
 		public event EventHandler<ConsoleKey> KeyPress;
