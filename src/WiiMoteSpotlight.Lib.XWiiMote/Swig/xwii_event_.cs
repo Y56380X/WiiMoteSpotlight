@@ -8,6 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
+namespace WiiMoteSpotlight.Lib.XWiiMote.Swig {
 
 public class xwii_event_ : global::System.IDisposable {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
@@ -87,5 +88,7 @@ public class xwii_event_ : global::System.IDisposable {
 
   public xwii_event_() : this(xwiimotePINVOKE.new_xwii_event_(), true) {
   }
+
+}
 
 }

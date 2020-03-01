@@ -8,6 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
+namespace WiiMoteSpotlight.Lib.XWiiMote.Swig {
 
 public enum xwii_drums_abs {
   DRUMS_ABS_PAD,
@@ -19,4 +20,6 @@ public enum xwii_drums_abs {
   DRUMS_ABS_BASS,
   DRUMS_ABS_HI_HAT,
   DRUMS_ABS_NUM
+}
+
 }

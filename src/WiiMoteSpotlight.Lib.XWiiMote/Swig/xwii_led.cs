@@ -8,10 +8,13 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
+namespace WiiMoteSpotlight.Lib.XWiiMote.Swig {
 
 public enum xwii_led {
   LED1 = 1,
   LED2 = 2,
   LED3 = 3,
   LED4 = 4
+}
+
 }

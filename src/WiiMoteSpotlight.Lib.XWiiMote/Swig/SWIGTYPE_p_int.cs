@@ -8,6 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
+namespace WiiMoteSpotlight.Lib.XWiiMote.Swig {
 
 public class SWIGTYPE_p_int {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
@@ -23,4 +24,6 @@ public class SWIGTYPE_p_int {
   internal static global::System.Runtime.InteropServices.HandleRef getCPtr(SWIGTYPE_p_int obj) {
     return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
   }
+}
+
 }

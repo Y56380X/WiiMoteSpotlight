@@ -8,6 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
+namespace WiiMoteSpotlight.Lib.XWiiMote.Swig {
 
 public enum xwii_event_types {
   EVENT_KEY,
@@ -28,4 +29,6 @@ public enum xwii_event_types {
   EVENT_GUITAR_MOVE,
   EVENT_GONE,
   EVENT_NUM
+}
+
 }

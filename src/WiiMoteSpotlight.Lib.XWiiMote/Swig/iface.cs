@@ -8,6 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
+namespace WiiMoteSpotlight.Lib.XWiiMote.Swig {
 
 public class iface : global::System.IDisposable {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
@@ -127,5 +128,7 @@ public class iface : global::System.IDisposable {
     string ret = xwiimotePINVOKE.iface_get_name(iface);
     return ret;
   }
+
+}
 
 }

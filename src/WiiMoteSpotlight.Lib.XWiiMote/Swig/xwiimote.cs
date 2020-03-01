@@ -8,6 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
+namespace WiiMoteSpotlight.Lib.XWiiMote.Swig {
 
 public class xwiimote {
   public static readonly string NAME_CORE = xwiimotePINVOKE.NAME_CORE_get();
@@ -20,4 +21,6 @@ public class xwiimote {
   public static readonly string NAME_PRO_CONTROLLER = xwiimotePINVOKE.NAME_PRO_CONTROLLER_get();
   public static readonly string NAME_DRUMS = xwiimotePINVOKE.NAME_DRUMS_get();
   public static readonly string NAME_GUITAR = xwiimotePINVOKE.NAME_GUITAR_get();
+}
+
 }

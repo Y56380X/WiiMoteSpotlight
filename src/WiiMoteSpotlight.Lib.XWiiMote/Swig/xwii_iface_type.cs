@@ -8,6 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
+namespace WiiMoteSpotlight.Lib.XWiiMote.Swig {
 
 public enum xwii_iface_type {
   IFACE_CORE = 0x000001,
@@ -22,4 +23,6 @@ public enum xwii_iface_type {
   IFACE_GUITAR = 0x004000,
   IFACE_ALL = IFACE_CORE|IFACE_ACCEL|IFACE_IR|IFACE_MOTION_PLUS|IFACE_NUNCHUK|IFACE_CLASSIC_CONTROLLER|IFACE_BALANCE_BOARD|IFACE_PRO_CONTROLLER|IFACE_DRUMS|IFACE_GUITAR,
   IFACE_WRITABLE = 0x010000
+}
+
 }

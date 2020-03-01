@@ -8,6 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
+namespace WiiMoteSpotlight.Lib.XWiiMote.Swig {
 
 public enum xwii_event_keys {
   KEY_LEFT,
@@ -39,4 +40,6 @@ public enum xwii_event_keys {
   KEY_FRET_LOW,
   KEY_FRET_FAR_LOW,
   KEY_NUM
+}
+
 }

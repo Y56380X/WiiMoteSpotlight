@@ -8,6 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
+namespace WiiMoteSpotlight.Lib.XWiiMote.Swig {
 
 public class monitor : global::System.IDisposable {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
@@ -57,5 +58,7 @@ public class monitor : global::System.IDisposable {
     string ret = xwiimotePINVOKE.monitor_poll(swigCPtr);
     return ret;
   }
+
+}
 
 }

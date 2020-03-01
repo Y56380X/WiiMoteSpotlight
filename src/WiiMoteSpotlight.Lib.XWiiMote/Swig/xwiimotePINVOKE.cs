@@ -8,6 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
+namespace WiiMoteSpotlight.Lib.XWiiMote.Swig {
 
 class xwiimotePINVOKE {
 
@@ -192,132 +193,134 @@ class xwiimotePINVOKE {
   }
 
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_new_monitor")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_new_monitor___")]
   public static extern global::System.IntPtr new_monitor(bool jarg1, bool jarg2);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_delete_monitor")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_delete_monitor___")]
   public static extern void delete_monitor(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_monitor_get_fd")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_monitor_get_fd___")]
   public static extern int monitor_get_fd(global::System.Runtime.InteropServices.HandleRef jarg1, bool jarg2);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_monitor_poll")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_monitor_poll___")]
   public static extern string monitor_poll(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_xwii_event__type_set")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_xwii_event__type_set___")]
   public static extern void xwii_event__type_set(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_xwii_event__type_get")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_xwii_event__type_get___")]
   public static extern uint xwii_event__type_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_xwii_event__get_abs")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_xwii_event__get_abs___")]
   public static extern void xwii_event__get_abs(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3, global::System.Runtime.InteropServices.HandleRef jarg4, global::System.Runtime.InteropServices.HandleRef jarg5);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_xwii_event__set_abs")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_xwii_event__set_abs___")]
   public static extern void xwii_event__set_abs(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3, int jarg4, int jarg5);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_xwii_event__get_key")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_xwii_event__get_key___")]
   public static extern void xwii_event__get_key(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_xwii_event__set_key")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_xwii_event__set_key___")]
   public static extern void xwii_event__set_key(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2, uint jarg3);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_xwii_event__get_time")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_xwii_event__get_time___")]
   public static extern void xwii_event__get_time(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_xwii_event__set_time")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_xwii_event__set_time___")]
   public static extern void xwii_event__set_time(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_xwii_event__ir_is_valid")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_xwii_event__ir_is_valid___")]
   public static extern bool xwii_event__ir_is_valid(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_new_xwii_event_")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_new_xwii_event____")]
   public static extern global::System.IntPtr new_xwii_event_();
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_delete_xwii_event_")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_delete_xwii_event____")]
   public static extern void delete_xwii_event_(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_new_iface")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_new_iface___")]
   public static extern global::System.IntPtr new_iface(string jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_delete_iface")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_delete_iface___")]
   public static extern void delete_iface(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_iface_open")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_iface_open___")]
   public static extern void iface_open(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_iface_close")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_iface_close___")]
   public static extern void iface_close(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_iface_opened")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_iface_opened___")]
   public static extern uint iface_opened(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_iface_get_syspath")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_iface_get_syspath___")]
   public static extern string iface_get_syspath(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_iface_get_fd")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_iface_get_fd___")]
   public static extern int iface_get_fd(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_iface_available")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_iface_available___")]
   public static extern uint iface_available(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_iface_dispatch")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_iface_dispatch___")]
   public static extern void iface_dispatch(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_iface_rumble")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_iface_rumble___")]
   public static extern void iface_rumble(global::System.Runtime.InteropServices.HandleRef jarg1, bool jarg2);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_iface_get_led")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_iface_get_led___")]
   public static extern bool iface_get_led(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_iface_set_led")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_iface_set_led___")]
   public static extern void iface_set_led(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2, bool jarg3);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_iface_get_battery")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_iface_get_battery___")]
   public static extern int iface_get_battery(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_iface_get_devtype")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_iface_get_devtype___")]
   public static extern string iface_get_devtype(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_iface_get_extension")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_iface_get_extension___")]
   public static extern string iface_get_extension(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_iface_set_mp_normalization")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_iface_set_mp_normalization___")]
   public static extern void iface_set_mp_normalization(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3, int jarg4, int jarg5);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_iface_get_mp_normalization")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_iface_get_mp_normalization___")]
   public static extern void iface_get_mp_normalization(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3, global::System.Runtime.InteropServices.HandleRef jarg4, global::System.Runtime.InteropServices.HandleRef jarg5);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_iface_get_name")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_iface_get_name___")]
   public static extern string iface_get_name(uint jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_NAME_CORE_get")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_NAME_CORE_get___")]
   public static extern string NAME_CORE_get();
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_NAME_ACCEL_get")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_NAME_ACCEL_get___")]
   public static extern string NAME_ACCEL_get();
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_NAME_IR_get")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_NAME_IR_get___")]
   public static extern string NAME_IR_get();
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_NAME_MOTION_PLUS_get")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_NAME_MOTION_PLUS_get___")]
   public static extern string NAME_MOTION_PLUS_get();
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_NAME_NUNCHUK_get")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_NAME_NUNCHUK_get___")]
   public static extern string NAME_NUNCHUK_get();
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_NAME_CLASSIC_CONTROLLER_get")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_NAME_CLASSIC_CONTROLLER_get___")]
   public static extern string NAME_CLASSIC_CONTROLLER_get();
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_NAME_BALANCE_BOARD_get")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_NAME_BALANCE_BOARD_get___")]
   public static extern string NAME_BALANCE_BOARD_get();
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_NAME_PRO_CONTROLLER_get")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_NAME_PRO_CONTROLLER_get___")]
   public static extern string NAME_PRO_CONTROLLER_get();
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_NAME_DRUMS_get")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_NAME_DRUMS_get___")]
   public static extern string NAME_DRUMS_get();
 
-  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_NAME_GUITAR_get")]
+  [global::System.Runtime.InteropServices.DllImport("xwiimote", EntryPoint="CSharp_WiiMoteSpotlightfLibfXWiiMotefSwig_NAME_GUITAR_get___")]
   public static extern string NAME_GUITAR_get();
+}
+
 }
