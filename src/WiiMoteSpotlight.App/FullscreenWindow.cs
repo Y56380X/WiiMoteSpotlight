@@ -23,6 +23,7 @@
 using System;
 using System.Reflection;
 using System.Runtime.Loader;
+using System.Threading;
 using Avalonia.Controls;
 
 namespace WiiMoteSpotlight.App
@@ -36,6 +37,25 @@ namespace WiiMoteSpotlight.App
 		}
 
 		private void EnableFullscreen()
+		{
+			switch (Environment.OSVersion.Platform)
+			{
+				case PlatformID.Unix:
+					EnableFullscreenLinux();
+					break;
+				default:
+					EnableFullscreenOtherPlatforms();
+					break;
+			}
+		}
+
+		private void EnableFullscreenOtherPlatforms()
+		{
+			HasSystemDecorations = false;
+			WindowState = WindowState.Maximized;
+		}
+
+		private void EnableFullscreenLinux()
 		{
 			IntPtr displayPointer;
 			IntPtr fullscreen;
