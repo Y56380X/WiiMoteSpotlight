@@ -16,6 +16,7 @@
         <PackageReference Include="Avalonia.Desktop" Version="0.9.3" />
     </ItemGroup>
     <ItemGroup>
+      <ProjectReference Include="..\WiiMoteSpotlight.Lib.Virtual\WiiMoteSpotlight.Lib.Virtual.csproj" />
       <ProjectReference Include="..\WiiMoteSpotlight.Lib.XWiiMote\WiiMoteSpotlight.Lib.XWiiMote.csproj" />
       <ProjectReference Include="..\WiiMoteSpotlight.Lib\WiiMoteSpotlight.Lib.csproj" />
     </ItemGroup>

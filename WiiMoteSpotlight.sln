@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WiiMoteSpotlight.Lib", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WiiMoteSpotlight.Lib.XWiiMote", "src\WiiMoteSpotlight.Lib.XWiiMote\WiiMoteSpotlight.Lib.XWiiMote.csproj", "{F442C0DF-49E0-478F-A339-95A0187F71F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WiiMoteSpotlight.Lib.Virtual", "src\WiiMoteSpotlight.Lib.Virtual\WiiMoteSpotlight.Lib.Virtual.csproj", "{60B90AFF-4F5D-4B36-9552-063FDB998CF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,5 +31,9 @@ Global
 		{F442C0DF-49E0-478F-A339-95A0187F71F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F442C0DF-49E0-478F-A339-95A0187F71F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F442C0DF-49E0-478F-A339-95A0187F71F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60B90AFF-4F5D-4B36-9552-063FDB998CF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60B90AFF-4F5D-4B36-9552-063FDB998CF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60B90AFF-4F5D-4B36-9552-063FDB998CF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60B90AFF-4F5D-4B36-9552-063FDB998CF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
