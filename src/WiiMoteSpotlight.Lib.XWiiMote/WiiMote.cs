@@ -23,6 +23,7 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using WiiMoteSpotlight.Lib.XWiiMote.EventData;
 using WiiMoteSpotlight.Lib.XWiiMote.Swig;
 
 namespace WiiMoteSpotlight.Lib.XWiiMote
@@ -55,26 +56,42 @@ namespace WiiMoteSpotlight.Lib.XWiiMote
 		{
 			while (true)
 			{
-				if (!TryDispatchEvent(out var wiiEvent))
+				if (!TryDispatchEvent(out var inputEvent))
 					Thread.Sleep(1);
+
+				HandleInputEvent(inputEvent);
+			}
+		}
+
+		private void HandleInputEvent(in xwii_event_ inputEvent)
+		{
+			xwii_event_types eventType = (xwii_event_types)inputEvent.type;
 				
-				xwii_event_types eventType = (xwii_event_types)wiiEvent.type;
-				
-				switch (eventType)
+			switch (eventType)
+			{
+				case xwii_event_types.EVENT_KEY:
 				{
-					case xwii_event_types.EVENT_KEY:
-						break;
+					using var key = new EventUInt();
+					using var state = new EventUInt();
+					inputEvent.get_key(key, state);
+					var keyPressed = (xwii_event_keys) key.Get();
+
+					if (keyPressed == xwii_event_keys.KEY_B && state.Get() == 0)
+						KeyRelease?.Invoke(this, ConsoleKey.B);
+					if (keyPressed == xwii_event_keys.KEY_B && state.Get() == 1)
+						KeyPress?.Invoke(this, ConsoleKey.B);
+					break;
 				}
 			}
 		}
 
-		private bool TryDispatchEvent(out xwii_event_ wiiEvent)
+		private bool TryDispatchEvent(out xwii_event_ inputEvent)
 		{
-			wiiEvent = new xwii_event_();
+			inputEvent = new xwii_event_();
 			
 			try
 			{
-				_device.dispatch(wiiEvent);
+				_device.dispatch(inputEvent);
 			}
 			catch
 			{
