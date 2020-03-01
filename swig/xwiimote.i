@@ -655,16 +655,16 @@ enum xwii_iface_type {
 	XWII_IFACE_PRO_CONTROLLER	= 0x001000,
 	XWII_IFACE_DRUMS		= 0x002000,
 	XWII_IFACE_GUITAR		= 0x004000,
-	XWII_IFACE_ALL			= XWII_IFACE_CORE |
-					  XWII_IFACE_ACCEL |
-					  XWII_IFACE_IR |
-					  XWII_IFACE_MOTION_PLUS |
-					  XWII_IFACE_NUNCHUK |
-					  XWII_IFACE_CLASSIC_CONTROLLER |
-					  XWII_IFACE_BALANCE_BOARD |
-					  XWII_IFACE_PRO_CONTROLLER |
-					  XWII_IFACE_DRUMS |
-					  XWII_IFACE_GUITAR,
+	XWII_IFACE_ALL			= IFACE_CORE |
+                              IFACE_ACCEL |
+                              IFACE_IR |
+                              IFACE_MOTION_PLUS |
+                              IFACE_NUNCHUK |
+                              IFACE_CLASSIC_CONTROLLER |
+                              IFACE_BALANCE_BOARD |
+                              IFACE_PRO_CONTROLLER |
+                              IFACE_DRUMS |
+                              IFACE_GUITAR,
 	XWII_IFACE_WRITABLE		= 0x010000,
 };
 
