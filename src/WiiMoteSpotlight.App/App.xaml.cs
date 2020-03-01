@@ -9,7 +9,7 @@ namespace WiiMoteSpotlight.App
 {
 	public class App : Application
 	{
-		private static bool UseVirtual { get; } = true;
+		private static bool UseVirtual { get; } = false;
 		public static ServiceProvider Services { get; private set; }
 
 		public override void Initialize()
