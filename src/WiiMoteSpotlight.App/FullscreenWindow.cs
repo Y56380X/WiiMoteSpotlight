@@ -23,7 +23,6 @@
 using System;
 using System.Reflection;
 using System.Runtime.Loader;
-using System.Threading;
 using Avalonia.Controls;
 
 namespace WiiMoteSpotlight.App
