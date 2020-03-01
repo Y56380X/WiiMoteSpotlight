@@ -32,6 +32,7 @@ namespace WiiMoteSpotlight.Lib.XWiiMote
 	{
 		public event EventHandler<ConsoleKey> KeyPress;
 		public event EventHandler<ConsoleKey> KeyRelease;
+		public event EventHandler<(int x, int y)> PointerMoved;
 
 		private readonly iface _device;
 
@@ -45,7 +46,7 @@ namespace WiiMoteSpotlight.Lib.XWiiMote
 			// Open wiimote
 			_device = new iface(sysPath);
 			_device.open((uint) (xwii_iface_type.IFACE_CORE | xwii_iface_type.IFACE_WRITABLE |
-			                     xwii_iface_type.IFACE_MOTION_PLUS));
+			                     xwii_iface_type.IFACE_ACCEL));
 
 			_device.set_mp_normalization(-266, 2500, -1160, 50);
 			
@@ -80,6 +81,17 @@ namespace WiiMoteSpotlight.Lib.XWiiMote
 						KeyRelease?.Invoke(this, ConsoleKey.B);
 					if (keyPressed == xwii_event_keys.KEY_B && state.Get() == 1)
 						KeyPress?.Invoke(this, ConsoleKey.B);
+					break;
+				}
+				case xwii_event_types.EVENT_ACCEL:
+				{
+					using var x = new EventInt();
+					using var y = new EventInt();
+					using var z = new EventInt();
+					
+					inputEvent.get_abs(0, x, y, z);
+					PointerMoved?.Invoke(this, (x.Get(), y.Get()));
+					
 					break;
 				}
 			}

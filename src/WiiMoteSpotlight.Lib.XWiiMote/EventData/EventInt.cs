@@ -26,14 +26,14 @@ using WiiMoteSpotlight.Lib.XWiiMote.Swig;
 
 namespace WiiMoteSpotlight.Lib.XWiiMote.EventData
 {
-	public class EventUInt : IDisposable
+	public class EventInt : IDisposable
 	{
 		private readonly IntPtr maPtr;
-		private SWIGTYPE_p_unsigned_int internalW;
+		private SWIGTYPE_p_int internalW;
 
-		public EventUInt()
+		public EventInt()
 		{
-			int size = Marshal.SizeOf(typeof(uint));
+			int size = Marshal.SizeOf(typeof(int));
 			maPtr = Marshal.AllocHGlobal(size);
 		}
 
@@ -42,9 +42,9 @@ namespace WiiMoteSpotlight.Lib.XWiiMote.EventData
 			return Marshal.ReadInt32(maPtr);
 		}
 		
-		public static implicit operator SWIGTYPE_p_unsigned_int(EventUInt d)
+		public static implicit operator SWIGTYPE_p_int(EventInt d)
 		{
-			return d.internalW ??= new SWIGTYPE_p_unsigned_int(d.maPtr, true);
+			return d.internalW ??= new SWIGTYPE_p_int(d.maPtr, true);
 		}
 
 		public void Dispose()
