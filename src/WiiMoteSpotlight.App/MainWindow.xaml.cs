@@ -19,6 +19,11 @@ namespace WiiMoteSpotlight.App
 			WiiMote.KeyRelease += WiiMoteOnKeyRelease;
 		}
 		
+		private void InitializeComponent()
+		{
+			AvaloniaXamlLoader.Load(this);
+		}
+		
 		private void WiiMoteOnKeyPress(object? sender, ConsoleKey key)
 		{
 			switch (key)
@@ -37,11 +42,6 @@ namespace WiiMoteSpotlight.App
 					Dispatcher.UIThread.InvokeAsync(Hide);
 					break;
 			}
-		}
-
-		private void InitializeComponent()
-		{
-			AvaloniaXamlLoader.Load(this);
 		}
 	}
 }
