@@ -19,6 +19,7 @@
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\WiiMoteSpotlight.Lib.Virtual\WiiMoteSpotlight.Lib.Virtual.csproj" />
+      <ProjectReference Include="..\WiiMoteSpotlight.Lib.WiimoteLib\WiiMoteSpotlight.Lib.WiimoteLib.csproj" />
       <ProjectReference Include="..\WiiMoteSpotlight.Lib.XWiiMote\WiiMoteSpotlight.Lib.XWiiMote.csproj" />
       <ProjectReference Include="..\WiiMoteSpotlight.Lib\WiiMoteSpotlight.Lib.csproj" />
     </ItemGroup>

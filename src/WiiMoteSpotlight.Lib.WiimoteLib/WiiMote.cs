@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using WiimoteLib;
 
 namespace WiiMoteSpotlight.Lib.WiimoteLib
 {
@@ -10,29 +11,24 @@ namespace WiiMoteSpotlight.Lib.WiimoteLib
 		public event EventHandler<ConsoleKey> KeyRelease;
 		public event EventHandler<(int x, int y)> PointerMoved;
 
-		private readonly global::WiimoteLib.Wiimote _device;
+		private readonly Wiimote _device;
 		
 		public WiiMote()
 		{
 			// Connect to device
-			_device = new global::WiimoteLib.Wiimote();
+			_device = new Wiimote();
 			_device.Connect();
 			
 			// Start processing loops
-			Task.Run(InputEventLoop);
+			_device.WiimoteChanged += DeviceOnWiimoteChanged;
 		}
 
-		private void InputEventLoop()
+		private void DeviceOnWiimoteChanged(object sender, WiimoteChangedEventArgs e)
 		{
-			while (true)
-			{
-				_device.GetStatus();
-				
-				if (_device.WiimoteState.ButtonState.B)
-					
-				
-				Thread.Sleep(1);
-			}
+			if (e.WiimoteState.ButtonState.B)
+				KeyPress.InvokeAsync(this, ConsoleKey.B);
+			if (!e.WiimoteState.ButtonState.B)
+				KeyRelease.InvokeAsync(this, ConsoleKey.B);
 		}
 
 		public void Dispose()

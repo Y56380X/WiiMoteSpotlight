@@ -20,6 +20,8 @@ ProjectSection(SolutionItems) = preProject
 	build.sh = build.sh
 EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WiiMoteSpotlight.Lib.WiimoteLib", "src\WiiMoteSpotlight.Lib.WiimoteLib\WiiMoteSpotlight.Lib.WiimoteLib.csproj", "{CA1153E6-57A2-4350-9007-99FD432FEAC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{60B90AFF-4F5D-4B36-9552-063FDB998CF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60B90AFF-4F5D-4B36-9552-063FDB998CF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60B90AFF-4F5D-4B36-9552-063FDB998CF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA1153E6-57A2-4350-9007-99FD432FEAC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA1153E6-57A2-4350-9007-99FD432FEAC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA1153E6-57A2-4350-9007-99FD432FEAC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA1153E6-57A2-4350-9007-99FD432FEAC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

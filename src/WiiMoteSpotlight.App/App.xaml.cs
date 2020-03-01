@@ -55,6 +55,7 @@ namespace WiiMoteSpotlight.App
 			return Environment.OSVersion.Platform switch
 			{
 				PlatformID.Unix => new Lib.XWiiMote.WiiMote(),
+				PlatformID.Win32NT => new Lib.WiimoteLib.WiiMote(),
 				_ => throw new PlatformNotSupportedException()
 			};
 		}
