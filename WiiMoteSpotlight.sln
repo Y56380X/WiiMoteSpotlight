@@ -1,5 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Swig", "Swig", "{AD847FCF-69B9-47B7-86F5-B1B3B4464741}"
+ProjectSection(SolutionItems) = preProject
+	swig\xwiimote.i = swig\xwiimote.i
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
