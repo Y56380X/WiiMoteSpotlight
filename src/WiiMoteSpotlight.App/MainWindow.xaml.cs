@@ -55,11 +55,8 @@ namespace WiiMoteSpotlight.App
 			Task.Delay(100).ContinueWith(_ => Dispatcher.UIThread.InvokeAsync(Hide));
 		}
 
-		private void InitializeComponent()
-		{
-			AvaloniaXamlLoader.Load(this);
-		}
-		
+		private void InitializeComponent() => AvaloniaXamlLoader.Load(this);
+
 		private void WiiMoteOnKeyPress(object? sender, ConsoleKey key)
 		{
 			switch (key)
@@ -80,9 +77,10 @@ namespace WiiMoteSpotlight.App
 			}
 		}
 		
-		private void WiiMoteOnPointerMoved(object? sender, (int x, int y) args)
+		private void WiiMoteOnPointerMoved(object? sender, (int x, int y)args)
 		{
-			Console.WriteLine(args);
+			var (x, y) = args;
+			OpenTK.Input.Mouse.SetPosition(x, y);
 		}
 		
 		private void OnPointerMoved(object? sender, PointerEventArgs args)

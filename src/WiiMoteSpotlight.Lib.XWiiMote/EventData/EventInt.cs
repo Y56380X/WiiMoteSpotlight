@@ -28,28 +28,22 @@ namespace WiiMoteSpotlight.Lib.XWiiMote.EventData
 {
 	public class EventInt : IDisposable
 	{
-		private readonly IntPtr maPtr;
-		private SWIGTYPE_p_int internalW;
+		private readonly IntPtr _maPtr;
+		private SWIGTYPE_p_int _internalW;
 
 		public EventInt()
 		{
 			int size = Marshal.SizeOf(typeof(int));
-			maPtr = Marshal.AllocHGlobal(size);
+			_maPtr = Marshal.AllocHGlobal(size);
 		}
 
-		public int Get()
-		{
-			return Marshal.ReadInt32(maPtr);
-		}
-		
-		public static implicit operator SWIGTYPE_p_int(EventInt d)
-		{
-			return d.internalW ??= new SWIGTYPE_p_int(d.maPtr, true);
-		}
+		public int Get() => Marshal.ReadInt32(_maPtr);
 
-		public void Dispose()
-		{
-			Marshal.FreeHGlobal(maPtr);
-		}
+		public static implicit operator SWIGTYPE_p_int(EventInt d) => 
+			d._internalW ??= new SWIGTYPE_p_int(d._maPtr, true);
+
+		public static implicit operator int(EventInt d) => d.Get();
+
+		public void Dispose() => Marshal.FreeHGlobal(_maPtr);
 	}
 }
