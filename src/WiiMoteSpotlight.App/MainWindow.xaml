@@ -1,9 +1,9 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        Background="Transparent" 
         x:Class="WiiMoteSpotlight.App.MainWindow"
         Title="WiiMoteSpotlight.App">
-    Welcome to Avalonia!
+    <Canvas>
+        <Ellipse StrokeThickness="5000" Height="10350" Width="10350" Stroke="#BF303030" Name="pointer" IsVisible="False"></Ellipse>
+    </Canvas>
 </Window>

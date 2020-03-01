@@ -1,4 +1,6 @@
 using System;
+using Avalonia.Controls;
+using Avalonia.Controls.Shapes;
 using Avalonia.Markup.Xaml;
 using Avalonia.Threading;
 using Microsoft.Extensions.DependencyInjection;
@@ -8,15 +10,20 @@ namespace WiiMoteSpotlight.App
 {
 	public class MainWindow : FullscreenWindow
 	{
-		private IWiiMote WiiMote { get; } = App.Services.GetService<IWiiMote>();
+		private readonly IWiiMote _wiiMote;
+		private readonly Control _pointer;
 
 		public MainWindow()
 		{
 			InitializeComponent();
 			
+			// Initialize private fields
+			_wiiMote = App.Services.GetService<IWiiMote>();
+			_pointer = this.FindControl<Ellipse>("pointer");
+			
 			// Subscribe to WiiMote events
-			WiiMote.KeyPress += WiiMoteOnKeyPress;
-			WiiMote.KeyRelease += WiiMoteOnKeyRelease;
+			_wiiMote.KeyPress += WiiMoteOnKeyPress;
+			_wiiMote.KeyRelease += WiiMoteOnKeyRelease;
 		}
 		
 		private void InitializeComponent()
@@ -42,6 +49,18 @@ namespace WiiMoteSpotlight.App
 					Dispatcher.UIThread.InvokeAsync(Hide);
 					break;
 			}
+		}
+
+		public override void Show()
+		{
+			base.Show();
+			_pointer.IsVisible = true;
+		}
+
+		public override void Hide()
+		{
+			base.Hide();
+			_pointer.IsVisible = false;
 		}
 	}
 }
