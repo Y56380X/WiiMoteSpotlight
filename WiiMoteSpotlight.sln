@@ -13,6 +13,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WiiMoteSpotlight.Lib.XWiiMo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WiiMoteSpotlight.Lib.Virtual", "src\WiiMoteSpotlight.Lib.Virtual\WiiMoteSpotlight.Lib.Virtual.csproj", "{60B90AFF-4F5D-4B36-9552-063FDB998CF4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{2B784F54-7E12-40D2-A142-67D34684B173}"
+ProjectSection(SolutionItems) = preProject
+	build.cake = build.cake
+	build.ps1 = build.ps1
+	build.sh = build.sh
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -651,4 +651,13 @@ fabric.properties
 
 # End of https://www.gitignore.io/api/rider,csharp,intellij,visualstudio,visualstudiocode
 
+# Created by https://www.gitignore.io/api/cake
+# Edit at https://www.gitignore.io/?templates=cake
+
+### Cake ###
+tools/*
+!tools/packages.config
+
+# End of https://www.gitignore.io/api/cake
+
 .idea
