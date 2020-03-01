@@ -37,6 +37,8 @@ namespace WiiMoteSpotlight.App
 		private readonly IWiiMote _wiiMote;
 		private readonly Control _pointer;
 
+		private bool _refreshPointer;
+
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -51,18 +53,26 @@ namespace WiiMoteSpotlight.App
 			_wiiMote.PointerMoved += WiiMoteOnPointerMoved;
 			PointerMoved += OnPointerMoved;
 			
+			CenterPointer();
+			
 			// Start application hidden
 			Task.Delay(100).ContinueWith(_ => Dispatcher.UIThread.InvokeAsync(Hide));
 		}
 
 		private void InitializeComponent() => AvaloniaXamlLoader.Load(this);
 
+		private void CenterPointer()
+		{
+			_pointer.SetValue(Canvas.LeftProperty, 960);
+			_pointer.SetValue(Canvas.TopProperty, 540);
+		}
+		
 		private void WiiMoteOnKeyPress(object? sender, ConsoleKey key)
 		{
 			switch (key)
 			{
 				case ConsoleKey.B:
-					Dispatcher.UIThread.InvokeAsync(Show);
+					Dispatcher.UIThread.Post(Show);
 					break;
 			}
 		}
@@ -72,7 +82,7 @@ namespace WiiMoteSpotlight.App
 			switch (key)
 			{
 				case ConsoleKey.B:
-					Dispatcher.UIThread.InvokeAsync(Hide);
+					Dispatcher.UIThread.Post(Hide);
 					break;
 			}
 		}
@@ -80,7 +90,7 @@ namespace WiiMoteSpotlight.App
 		private void WiiMoteOnPointerMoved(object? sender, (int x, int y)args)
 		{
 			var (x, y) = args;
-			OpenTK.Input.Mouse.SetPosition(x, y);
+			if (_refreshPointer) OpenTK.Input.Mouse.SetPosition(x, y);
 		}
 		
 		private void OnPointerMoved(object? sender, PointerEventArgs args)
@@ -94,13 +104,24 @@ namespace WiiMoteSpotlight.App
 		public override void Show()
 		{
 			base.Show();
-			_pointer.IsVisible = true;
+			Task
+				.Delay(200)
+				.ContinueWith(_ => 
+					Dispatcher.UIThread.InvokeAsync(() => _pointer.IsVisible = true));
+			_refreshPointer = true;
 		}
 
 		public override void Hide()
 		{
 			base.Hide();
 			_pointer.IsVisible = false;
+			_refreshPointer = false;
+		}
+
+		protected override void OnClosed(EventArgs e)
+		{
+			_wiiMote?.Dispose();
+			base.OnClosed(e);
 		}
 	}
 }
