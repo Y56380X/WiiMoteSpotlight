@@ -18,6 +18,7 @@
 %apply unsigned int *OUTPUT { long int* tv_sec, long int* tv_usec };
 
 %{
+#include <errno.h>
 #include <xwiimote.h>
 
 /*
