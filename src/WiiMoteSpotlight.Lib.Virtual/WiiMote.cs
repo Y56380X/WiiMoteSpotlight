@@ -26,14 +26,14 @@ namespace WiiMoteSpotlight.Lib.Virtual
 		{
 			while (true)
 			{
-				Console.WriteLine(Keyboard.GetState().IsKeyDown(Key.B));
+				var keyboardState = Keyboard.GetState();
 				
-				if (Keyboard.GetState().IsKeyDown(Key.B) && !IsKeyStatusPressed(Key.B))
+				if (keyboardState.IsKeyDown(Key.B) && !IsKeyStatusPressed(Key.B))
 				{
 					KeyPress?.Invoke(this, ConsoleKey.B);
 					_keyStatus[Key.B] = true;
 				}
-				if (Keyboard.GetState().IsKeyUp(Key.B) && IsKeyStatusPressed(Key.B))
+				if (keyboardState.IsKeyUp(Key.B) && IsKeyStatusPressed(Key.B))
 				{
 					KeyRelease?.Invoke(this, ConsoleKey.B);
 					_keyStatus[Key.B] = false;
