@@ -42,5 +42,9 @@ namespace WiiMoteSpotlight.Lib.Virtual
 				Thread.Sleep(100);
 			}
 		}
+
+		public void Dispose()
+		{
+		}
 	}
 }

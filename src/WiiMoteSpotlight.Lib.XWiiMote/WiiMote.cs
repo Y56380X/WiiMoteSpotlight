@@ -6,5 +6,9 @@ namespace WiiMoteSpotlight.Lib.XWiiMote
 	{
 		public event EventHandler<ConsoleKey> KeyPress;
 		public event EventHandler<ConsoleKey> KeyRelease;
+
+		public void Dispose()
+		{
+		}
 	}
 }
