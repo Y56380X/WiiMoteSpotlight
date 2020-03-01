@@ -661,3 +661,5 @@ tools/*
 # End of https://www.gitignore.io/api/cake
 
 .idea
+swig/*
+!swig/*.i
