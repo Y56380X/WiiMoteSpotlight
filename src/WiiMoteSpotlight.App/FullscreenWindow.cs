@@ -22,6 +22,7 @@
 
 using System;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Runtime.Loader;
 using Avalonia.Controls;
 
@@ -33,6 +34,7 @@ namespace WiiMoteSpotlight.App
 		{
 			base.Show();
 			EnableFullscreen();
+			if (Environment.OSVersion.Platform == PlatformID.Win32NT) EnableWindowsTransparency();
 		}
 
 		private void EnableFullscreen()
@@ -83,5 +85,34 @@ namespace WiiMoteSpotlight.App
 
 			sendXEvent.Invoke(PlatformImpl, new object[]{ wmstate, (IntPtr)1, fullscreen, IntPtr.Zero, null, null });
 		}
+
+		#region Windows Transparency
+		
+		private struct MARGINS
+		{
+			public int cxLeftWidth;
+			public int cxRightWidth;
+			public int cyTopHeight;
+			public int cyBottomHeight;
+		}
+
+		[DllImport("user32.dll")]
+		private static extern int SetWindowLong(IntPtr hWnd, int nIndex, uint dwNewLong);
+
+		[DllImport("Dwmapi.dll")]
+		private static extern uint DwmExtendFrameIntoClientArea(IntPtr hWnd, ref MARGINS margins);
+
+		const int GWL_STYLE = -16;
+		const uint WS_POPUP = 0x80000000;
+		const uint WS_VISIBLE = 0x10000000;
+
+		void EnableWindowsTransparency()
+		{
+			var margins = new MARGINS { cxLeftWidth = -1 };
+			SetWindowLong(PlatformImpl.Handle.Handle, GWL_STYLE, WS_POPUP | WS_VISIBLE);
+			DwmExtendFrameIntoClientArea(PlatformImpl.Handle.Handle, ref margins);
+		}
+
+		#endregion
 	}
 }
