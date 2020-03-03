@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
 using WiimoteLib;
 
 namespace WiiMoteSpotlight.Lib.WiimoteLib
