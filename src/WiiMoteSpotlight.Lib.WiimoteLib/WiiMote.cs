@@ -16,10 +16,11 @@ namespace WiiMoteSpotlight.Lib.WiimoteLib
 			// Connect to device
 			_device = new Wiimote();
 			_device.Connect();
+			Console.WriteLine("WiiMote connected!");
 			
-			// Set LED
+			// Initialize device
 			_device.SetLEDs(true, false, false, false);
-			
+
 			// Start processing loops
 			_device.WiimoteChanged += DeviceOnWiimoteChanged;
 		}
@@ -35,6 +36,7 @@ namespace WiiMoteSpotlight.Lib.WiimoteLib
 		public void Dispose()
 		{
 			_device.Dispose();
+			Console.WriteLine("WiiMote disposed!");
 		}
 	}
 }
