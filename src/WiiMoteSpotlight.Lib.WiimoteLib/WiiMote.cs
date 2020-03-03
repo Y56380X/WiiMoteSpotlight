@@ -17,6 +17,9 @@ namespace WiiMoteSpotlight.Lib.WiimoteLib
 			_device = new Wiimote();
 			_device.Connect();
 			
+			// Set LED
+			_device.SetLEDs(true, false, false, false);
+			
 			// Start processing loops
 			_device.WiimoteChanged += DeviceOnWiimoteChanged;
 		}
