@@ -20,16 +20,10 @@
 	SOFTWARE.
 */
 
-using System;
-
 namespace WiiMoteSpotlight.Lib
 {
-	public interface IWiiMote : IDisposable
+	public interface IDeviceInfo
 	{
-		event EventHandler<ConsoleKey> KeyPress;
-		event EventHandler<ConsoleKey> KeyRelease;
-		event EventHandler<(int x, int y)> PointerMoved;
-
-		IDeviceInfo Info { get; }
+		byte BatteryPercentage { get; }
 	}
 }

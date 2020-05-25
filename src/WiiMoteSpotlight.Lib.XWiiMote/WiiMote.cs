@@ -35,6 +35,7 @@ namespace WiiMoteSpotlight.Lib.XWiiMote
 		public event EventHandler<ConsoleKey> KeyPress;
 		public event EventHandler<ConsoleKey> KeyRelease;
 		public event EventHandler<(int x, int y)> PointerMoved;
+		public IDeviceInfo Info { get; }
 
 		private readonly iface _device;
 		private readonly Queue<(DateTime timestamp, int x, int z)> _gyroValues;
@@ -58,6 +59,8 @@ namespace WiiMoteSpotlight.Lib.XWiiMote
 
 			_device.set_mp_normalization(-266, 2500, -740, 50);
 			
+			Info = new WiiMoteDeviceInfo(_device);
+
 			// Start processing loops
 			Task.Run(InputEventLoop);
 			Task.Run(GyroProcessingLoop);
@@ -119,7 +122,7 @@ namespace WiiMoteSpotlight.Lib.XWiiMote
 
 		private void HandleInputEvent(in xwii_event_ inputEvent)
 		{
-			xwii_event_types eventType = (xwii_event_types)inputEvent.type;
+			var eventType = (xwii_event_types)inputEvent.type;
 				
 			switch (eventType)
 			{

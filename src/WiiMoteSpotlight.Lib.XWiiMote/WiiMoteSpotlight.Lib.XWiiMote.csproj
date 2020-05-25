@@ -4,7 +4,7 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
-
+    
     <ItemGroup>
       <ProjectReference Include="..\WiiMoteSpotlight.Lib\WiiMoteSpotlight.Lib.csproj" />
     </ItemGroup>
