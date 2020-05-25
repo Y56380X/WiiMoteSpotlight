@@ -74,6 +74,8 @@ namespace WiiMoteSpotlight.App
 				}
 			} while (wiiMote == null);
 
+			Console.WriteLine("Wiimote connected");
+
 			return wiiMote;
 		}
 
