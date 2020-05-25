@@ -36,6 +36,7 @@ namespace WiiMoteSpotlight.App
 	{
 		private readonly IWiiMote _wiiMote;
 		private readonly Control _pointer;
+		private readonly DeviceInfoWindow _deviceInfoWindow;
 
 		private bool _refreshPointer;
 
@@ -45,6 +46,7 @@ namespace WiiMoteSpotlight.App
 
 			// Initialize private fields
 			_wiiMote = App.Services.GetService<IWiiMote>();
+			_deviceInfoWindow = new DeviceInfoWindow(_wiiMote.Info);
 			_pointer = this.FindControl<Ellipse>("pointer");
 
 			// Subscribe to WiiMote events
@@ -74,6 +76,9 @@ namespace WiiMoteSpotlight.App
 				case ConsoleKey.B:
 					Dispatcher.UIThread.Post(Show);
 					break;
+				case ConsoleKey.D1:
+					Dispatcher.UIThread.Post(_deviceInfoWindow.Show);
+					break;
 			}
 		}
 		
@@ -83,6 +88,9 @@ namespace WiiMoteSpotlight.App
 			{
 				case ConsoleKey.B:
 					Dispatcher.UIThread.Post(Hide);
+					break;
+				case ConsoleKey.D1:
+					Dispatcher.UIThread.Post(_deviceInfoWindow.Hide);
 					break;
 			}
 		}

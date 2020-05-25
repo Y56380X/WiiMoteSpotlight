@@ -115,7 +115,7 @@ namespace WiiMoteSpotlight.Lib.XWiiMote
 			while (true)
 			{
 				if (!TryDispatchEvent(out var inputEvent))
-					Thread.Sleep(1);
+					Thread.Sleep(5);
 
 				HandleInputEvent(inputEvent);
 			}

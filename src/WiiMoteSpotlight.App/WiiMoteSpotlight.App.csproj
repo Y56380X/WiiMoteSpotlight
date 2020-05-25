@@ -11,6 +11,12 @@
         <AvaloniaResource Include="**\*.xaml">
             <SubType>Designer</SubType>
         </AvaloniaResource>
+        <AvaloniaResource Update="DeviceInfoWindow.xaml">
+          <SubType>Designer</SubType>
+        </AvaloniaResource>
+        <Compile Update="DeviceInfoWindow.xaml.cs">
+          <DependentUpon>DeviceInfoWindow.xaml</DependentUpon>
+        </Compile>
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Avalonia" Version="0.9.10" />
