@@ -137,6 +137,10 @@ namespace WiiMoteSpotlight.Lib.XWiiMote
 						KeyRelease.InvokeAsync(this, ConsoleKey.B);
 					if (keyPressed == xwii_event_keys.KEY_B && state.Get() == 1)
 						KeyPress.InvokeAsync(this, ConsoleKey.B);
+					if (keyPressed == xwii_event_keys.KEY_ONE && state.Get() == 0)
+						KeyRelease.InvokeAsync(this, ConsoleKey.D1);
+					if (keyPressed == xwii_event_keys.KEY_ONE && state.Get() == 1)
+						KeyPress.InvokeAsync(this, ConsoleKey.D1);
 					if (keyPressed == xwii_event_keys.KEY_HOME && state.Get() == 1)
 						HomePointer();
 					

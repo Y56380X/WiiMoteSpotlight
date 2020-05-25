@@ -20,6 +20,7 @@
 	SOFTWARE.
 */
 
+using System;
 using WiiMoteSpotlight.Lib.XWiiMote.Swig;
 
 namespace WiiMoteSpotlight.Lib.XWiiMote
@@ -27,12 +28,22 @@ namespace WiiMoteSpotlight.Lib.XWiiMote
 	internal class WiiMoteDeviceInfo : IDeviceInfo
 	{
 		private readonly iface _device;
+		private (byte batteryPercentage, DateTime update) _batteryPercentageStore;
 
-		public byte BatteryPercentage => (byte)_device.get_battery();
+		public byte BatteryPercentage => GetBatteryPercentage();
 
 		public WiiMoteDeviceInfo(iface device)
 		{
 			_device = device;
+		}
+
+		private byte GetBatteryPercentage()
+		{
+			if (DateTime.Now.Subtract(_batteryPercentageStore.update).TotalSeconds < 1)
+				return _batteryPercentageStore.batteryPercentage;
+			_batteryPercentageStore.update = DateTime.Now;
+			_batteryPercentageStore.batteryPercentage = (byte)_device.get_battery();
+			return _batteryPercentageStore.batteryPercentage;
 		}
 	}
 }
