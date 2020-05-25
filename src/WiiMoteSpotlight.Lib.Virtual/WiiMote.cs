@@ -33,10 +33,15 @@ namespace WiiMoteSpotlight.Lib.Virtual
 		public event EventHandler<ConsoleKey> KeyPress;
 		public event EventHandler<ConsoleKey> KeyRelease;
 		public event EventHandler<(int x, int y)> PointerMoved;
+		public IDeviceInfo Info { get; }
 
 		private IDictionary<Key, bool> _keyStatus = new Dictionary<Key, bool>();
 
-		public WiiMote() => Task.Run(InputEventLoop);
+		public WiiMote()
+		{
+			Info = new WiiMoteDeviceInfo();
+			Task.Run(InputEventLoop);
+		}
 
 		private bool IsKeyStatusPressed(Key key)
 		{

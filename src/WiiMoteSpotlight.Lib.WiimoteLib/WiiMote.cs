@@ -8,6 +8,7 @@ namespace WiiMoteSpotlight.Lib.WiimoteLib
 		public event EventHandler<ConsoleKey> KeyPress;
 		public event EventHandler<ConsoleKey> KeyRelease;
 		public event EventHandler<(int x, int y)> PointerMoved;
+		public IDeviceInfo Info { get; }
 
 		private readonly Wiimote _device;
 		
@@ -17,6 +18,8 @@ namespace WiiMoteSpotlight.Lib.WiimoteLib
 			_device = new Wiimote();
 			_device.Connect();
 			Console.WriteLine("WiiMote connected!");
+			
+			Info = new WiiMoteDeviceInfo(_device);
 			
 			// Initialize device
 			_device.SetLEDs(true, false, false, false);
