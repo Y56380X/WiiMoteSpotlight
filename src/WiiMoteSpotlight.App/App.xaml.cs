@@ -21,6 +21,8 @@
 */
 
 using System;
+using System.IO;
+using System.Threading;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
@@ -52,12 +54,27 @@ namespace WiiMoteSpotlight.App
 			if (UseVirtual)
 				return new Lib.Virtual.WiiMote();
 
-			return Environment.OSVersion.Platform switch
+			IWiiMote? wiiMote = null;
+
+			do
 			{
-				PlatformID.Unix => new Lib.XWiiMote.WiiMote(),
-				PlatformID.Win32NT => new Lib.WiimoteLib.WiiMote(),
-				_ => throw new PlatformNotSupportedException()
-			};
+				try
+				{
+					wiiMote = Environment.OSVersion.Platform switch
+					{
+						PlatformID.Unix => new Lib.XWiiMote.WiiMote(),
+						PlatformID.Win32NT => new Lib.WiimoteLib.WiiMote(),
+						_ => throw new PlatformNotSupportedException()
+					};
+				}
+				catch (IOException)
+				{
+					Console.WriteLine("Wait for wiimote!");
+					Thread.Sleep(TimeSpan.FromSeconds(5));
+				}
+			} while (wiiMote == null);
+
+			return wiiMote;
 		}
 
 		public override void OnFrameworkInitializationCompleted()
