@@ -42,7 +42,8 @@ namespace WiiMoteSpotlight.Lib.XWiiMote
 			if (DateTime.Now.Subtract(_batteryPercentageStore.update).TotalSeconds < 1)
 				return _batteryPercentageStore.batteryPercentage;
 			_batteryPercentageStore.update = DateTime.Now;
-			_batteryPercentageStore.batteryPercentage = (byte)_device.get_battery();
+			lock (_device)
+				_batteryPercentageStore.batteryPercentage = (byte)_device.get_battery();
 			return _batteryPercentageStore.batteryPercentage;
 		}
 	}

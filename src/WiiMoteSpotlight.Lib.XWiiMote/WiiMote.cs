@@ -22,6 +22,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -174,9 +175,9 @@ namespace WiiMoteSpotlight.Lib.XWiiMote
 			
 			try
 			{
-				_device.dispatch(inputEvent);
+				lock (_device) _device.dispatch(inputEvent);
 			}
-			catch
+			catch (IOException)
 			{
 				return false;
 			}
@@ -186,7 +187,7 @@ namespace WiiMoteSpotlight.Lib.XWiiMote
 
 		public void Dispose()
 		{
-			_device.Dispose();
+			lock (_device) _device.Dispose();
 			Console.WriteLine("WiiMote disposed");
 		}
 	}
